@@ -2,6 +2,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using TestWebSiteWebShop_.Pages.Buy;
+using TestWebSiteWebShop_.Pages.Filler;
 using TestWebSiteWebShop_.Pages.Main;
 
 namespace TestWebSiteWebShop_
@@ -20,12 +21,41 @@ namespace TestWebSiteWebShop_
 
 
             Main main = new Main();
-            main.Parameth(wait);
-            main.Click();
+            Filter filter = new Filter();
             Buy buy = new Buy();
+            main.Parameth(wait);
+           
+
+            filter.ParamethFilter(wait);
+            filter.FilterAuther();
+            filter.ButtonClick();
+            filter.ButtonClickAll();
+            filter.FilterName();
+            filter.ButtonClick();
+            filter.ButtonClickAll();
+
+            filter.FilterName2();
+            filter.ButtonClick();
+            filter.ButtonClickAll();
+            main.Click();
+
 
             buy.Parameth(wait);
             buy.CheckBeforeClick();
+
+
+            main.Click2();
+            buy.CheckBeforeClick();
+            main.Click3();
+            buy.CheckBeforeClick();
+
+            main.Click4();
+            buy.CheckBeforeClick();
+
+            main.Click5();
+            buy.CheckBeforeClick();
+
+
             driver.Close();
         }
 
